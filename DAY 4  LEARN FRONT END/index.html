@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Untuk menandakan dokumen ini HTML5-->
+
+<html lang="id">
+  <!-- Ini adalah Elemen root halaman, 'lang="id"' untuk Bahasa Indonesia -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Encoding karakter UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Biar responsif di berbagai ukuran layar -->
+    <title>Profil Diri - 4</title>
+    <!-- Judul halaman yang muncul di tab browser -->
+
+    <!-- MY LINK CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Konten utama yang terlihat di browser -->
+
+    <header>
+      <!-- Header biasanya berisi judul dan navigasi utama -->
+      <h1>Muhammad Radifah Hibatillah</h1>
+      <!-- Heading tingkat 1: judul paling di halaman website -->
+      <h2>Front-End Developer Pemula</h2>
+      <!-- Heading tingkat 2: sub-judul -->
+      <nav>
+        <!-- Navigasi, berisi link ke bagian-bagian halaman atau ke halaman lain -->
+        <a href="#about">About</a> | <a href="#skills">Skills</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Konten utama halaman, hanya boleh satu <main> per dokumen -->
+
+      <section id="about">
+        <!-- Section = Pembagian konten berdasarkan topik-->
+        <h3>About me</h3>
+        <article>
+          <!-- Article = Potongan konten mandiri, bisa dipakai ulang/share -->
+          <p>Gua adalah Muhammad Radifah Hibatillah. Seorang pelajar yang menduduki bangku SMK akhir. Gua sedang belajar coding. dimulai dari belajar HTML dulu. Yaaaa walaupun HTML masih basic ya... gua harus tetap semangat</p>
+          <p>Gua dari kecil selalu main game. dari pertanyaan bagaimana cara membuat game yang membuat gua serius menekuni Programming</p>
+          <p>Semoga nyaman belajarnya dan masih waras wkwk</p>
+        </article>
+      </section>
+
+      <!-- === Hari 1: Skills & Hobi === -->
+      <section id="skills">
+        <h3>Skills & Hobi</h3>
+        <ul>
+          <!-- Unordered list: Daftar tanpa urutan -->
+          <li>HTML5 & Semantik</li>
+          <li>CSS Dasar & Flexbox</li>
+          <!-- Lanjutin list sampe berapapun yg lo mau-->
+        </ul>
+        <h3>Rencana Belajar</h3>
+        <ol>
+          <!-- Ordered list: Daftar berurutan -->
+          <li>Pelajari struktur HTML & semantik</li>
+          <li>Praktik dengan mini-project sederhana</li>
+          <li>Review & validasi di W3C</li>
+        </ol>
+      </section>
+
+      <!-- === Hari 1: Contact === -->
+      <section id="contact">
+        <h3>Contact</h3>
+        <p>
+          <a href="https://github.com/radifhibatillah" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/radif-hibatillah-0634a533a/" target="_blank">LinkedIn</a> |
+          <a href="https://instagram.com/radifhibatillah" target="_blank">Instagram</a>
+        </p>
+        <img class="image" src="radif.jpeg" width="15%" alt="Foto Profil Placeholder" />
+      </section>
+      <!-- Gambar dengan 'alt' untuk deskripsi, penting aksebilitas -->
+
+      <!-- === Hari 2: Form Kontak === -->
+      <section>
+        <form action="#" method="post">
+          <label for="nama">Nama:</label><br />
+          <input type="text" id="nama" name="nama" required placeholder="Tulis nama kamu" /><br />
+
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" required placeholder="nama@contoh.com" /><br />
+
+          <label for="pesan">Pesan:</label><br />
+          <textarea id="pesan" name="pesan" rows="4" required placeholder="Tulis pesanmu"></textarea><br />
+
+          <button type="submit">Kirim</button>
+        </form>
+        <!-- ==== Selesai Form Kontak ==== -->
+      </section>
+
+      <!-- === Hari 2 Section Data (Tabel Jadwal) === -->
+      <section id="data">
+        <h3>Jadwal Belajar Front-End</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Hari</th>
+              <th>Materi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Senin</td>
+              <td>HTML Semantik</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Selasa</td>
+              <td>Form & Table</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Rabu</td>
+              <td>CSS Dasar</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- === Tag semantik Pendukung Hari 2 === -->
+        <!--
+        <aside>
+          <p><b>Tips: Gunakan label yang sesuai dan always set placeholder agar user paham apa yang harus diisi.</b></p>
+        </aside>
+-->
+        <figure>
+          <img src="tarungderajat.jpeg" width="30%" alt="Foto Muhammad Radifah Hibatillah" /> <br />
+          <figcaption>Foto Profil : <b>Muhammad Radifah Hibatillah</b></figcaption>
+        </figure>
+
+        <p>
+          Terakhir diperbarui:
+          <time datetime="2025-04-28">28 April 2025</time>
+        </p>
+      </section>
+      <!-- ==== Selesai Section Data ==== -->
+    </main>
+
+    <footer>
+      <!-- Footer: informasi legal, copyright, kontak tambahan -->
+      <p>© 2025 Muhammad Radifah Hibatillah. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

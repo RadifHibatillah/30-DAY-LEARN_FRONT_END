@@ -1,0 +1,307 @@
+/* ==============================================
+   Professional Front-End Profile CSS (Revised)
+   Konten melebar penuh ke kanan
+   ============================================== */
+
+/* ========== Import Font & Reset ========== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* ========== Root Variables ========== */
+:root {
+  --bg-light: #f9fafb;
+  --bg-dark: #1f2023;
+  --text-light: #2e2f32;
+  --text-dark: #e1e1e1;
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --accent: #10b981;
+  --surface: #ffffff;
+  --surface-dark: #2a2b2e;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+  --transition: 0.3s ease-in-out;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --max-width: 100%; /* FULL WIDTH */
+}
+
+/* ========== Page Grid Layout ========== */
+body {
+  display: grid;
+  grid-template-areas:
+    "header  header"
+    "aside   main"
+    "footer  footer";
+  grid-template-columns: auto 1fr; /* sidebar + konten fleksibel */
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  transition: background-color var(--transition), color var(--transition);
+}
+header {
+  grid-area: header;
+}
+aside {
+  grid-area: aside;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+
+/* ========== Header ========== */
+header {
+  background: var(--surface);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: 0 2px 4px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+header h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-light);
+}
+#theme-toggle {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+#theme-toggle:hover {
+  background: #059669;
+}
+
+/* ========== Sidebar ========== */
+aside {
+  background: var(--surface);
+  padding: var(--space-lg) var(--space-md);
+  box-shadow: 2px 0 4px var(--shadow);
+  overflow-y: auto;
+}
+aside h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-light);
+}
+aside ul {
+  list-style: none;
+}
+aside li + li {
+  margin-top: var(--space-xs);
+}
+aside a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius);
+  transition: background var(--transition);
+}
+aside a:hover {
+  background: var(--primary-light);
+  color: #fff;
+}
+
+/* ========== Main Content ========== */
+main {
+  padding: var(--space-lg) var(--space-md);
+  overflow-x: hidden;
+  /* Pastikan lebar konten penuh */
+  width: 100%;
+}
+
+/* Section Common */
+section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  width: 100%; /* full width di dalam main */
+}
+section h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+  color: var(--text-light);
+}
+
+/* About */
+#about p {
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Skills */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+.skills-container ul,
+.skills-container ol {
+  padding-left: var(--space-md);
+}
+
+/* Contact */
+.contact-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+.contact-container img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+}
+th {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform var(--transition);
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Form */
+form input,
+form textarea {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-md);
+}
+form input:focus,
+form textarea:focus {
+  border-color: var(--primary);
+}
+
+/* Buttons */
+button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button[type="submit"]:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px) scale(1.02);
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+/* ========== Footer ========== */
+footer {
+  background: var(--surface);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: 0 -2px 4px var(--shadow);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* ========== Animations ========== */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Reveal on scroll */
+.animate-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-in.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.gallery-grid img {
+  animation: bounceIn 0.6s ease-out forwards;
+}
